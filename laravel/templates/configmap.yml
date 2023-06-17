@@ -1,0 +1,10 @@
+{{- if .Values.config.enabled  }}
+apiVersion: v1
+data:
+    DATABASE_HOST: "laravel-mysql-headless.laravel.svc.cluster.local"
+    DB_PORT: "3306"
+kind: ConfigMap
+metadata:
+  name: {{ .Values.config.configMap }}
+{{- end }}
+
